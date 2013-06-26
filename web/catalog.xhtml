@@ -19,6 +19,27 @@ and open the template in the editor.
                         <li> <h:outputText value="Index"/></li>
                     </h:commandLink></ul>
             </h:form>
+            
+            <h:dataTable class="table" value="#{catalogManager.myList}" var="item">
+                <h:column>
+                    <f:facet name="header"><h:outputText value="Identifiant"/></f:facet>
+                    <h:outputText value="#{item.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Nom"/>
+                    </f:facet>
+                    <h:outputText value="#{item.nom}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Prix"/>
+                    </f:facet>
+                    <h:outputText value="#{item.prix}"/>
+                </h:column>
+                
+            
+            </h:dataTable>
         </f:view>
     </h:body>
 </html>

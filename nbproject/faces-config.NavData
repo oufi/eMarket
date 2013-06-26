@@ -2,9 +2,10 @@
 <Scene Scope="Project" version="2">
     <Scope Scope="Faces Configuration Only"/>
     <Scope Scope="Project">
-        <Node id="shoppingCarte.xhtml" x="50" y="292" zoom="true"/>
-        <Node id="index.xhtml" x="209" y="24" zoom="false"/>
-        <Node id="catalog.xhtml" x="407" y="294" zoom="true"/>
+        <Node id="shoppingCarte.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="index.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="product-create.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="catalog.xhtml" x="400" y="150" zoom="true"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>

@@ -34,4 +34,12 @@ ul{
     list-style: none;
 }
 
+.table{
+    border: solid thin #99ccff ;
+    width: 300px;
+    text-align: center;  
+}
 
+.table rows{
+    background-color: #cccccc;
+}

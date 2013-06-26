@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Ajout produits</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form id="product-create" >
+                <h:outputLabel for="fieldID" value="identifiant : "/>
+                <h:inputText id="fieldID" value="#{catalogManager}"/><br/>
+                <h:outputLabel for="fieldNom" value="Nom : "/>
+                <h:inputText id="fieldNom" value="..."/><br/>
+                <h:outputLabel for="fieldPrix" value="Prix : "/>
+                <h:inputText id="fieldPrix"/><br/>
+                <h:commandButton value="Ajouter" type="submit" action="..."/>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
