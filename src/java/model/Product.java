@@ -38,8 +38,8 @@ public class Product implements Serializable{
        this.nom=name;
    } 
    
-   public void setPrix(double prise){
+   public void setPrix(double price){
    
-       this.prix=prise;
+       this.prix=price;
    }
 }

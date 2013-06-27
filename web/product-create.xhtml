@@ -14,11 +14,11 @@ and open the template in the editor.
         <f:view>
             <h:form id="product-create" >
                 <h:outputLabel for="fieldID" value="identifiant : "/>
-                <h:inputText id="fieldID" value="#{catalogManager}"/><br/>
+                <h:inputText id="fieldID" value="#{catalogManager.setId(fieldID)}"/><br/>
                 <h:outputLabel for="fieldNom" value="Nom : "/>
-                <h:inputText id="fieldNom" value="..."/><br/>
+                <h:inputText id="fieldNom" value="#{catalogManager.setName(fieldNom)}"/><br/>
                 <h:outputLabel for="fieldPrix" value="Prix : "/>
-                <h:inputText id="fieldPrix"/><br/>
+                <h:inputText id="fieldPrix" value="#{catalogManager.setPrice(fieldPrix)}"/><br/>
                 <h:commandButton value="Ajouter" type="submit" action="..."/>
             </h:form>
         </f:view>
