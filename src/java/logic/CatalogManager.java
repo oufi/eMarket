@@ -18,11 +18,18 @@ import model.Product;
 @ManagedBean
 @ApplicationScoped
 public class CatalogManager implements Serializable{
-    private int ident;
-    private String name;
-    private double price;
+    
     private ArrayList<Product> myList = new ArrayList<Product>();
-    Product produit=new Product();
+    private Product produit = new Product();
+
+    public Product getProduit() {
+        return produit;
+    }
+
+    public void setProduit(Product produit) {
+        this.produit = produit;
+    }
+    
     
     public CatalogManager(){}
  
@@ -34,15 +41,13 @@ public class CatalogManager implements Serializable{
     this.myList=l;
     }
     
-    public void setId(int ident){
-        this.ident=ident;
-    }
-    
-    public void setName(String name){
-        this.name=name;
-    }
-    public void setPrice(double price){
-        this.price=price;
+    public void addProduct(Product produit){
+        
+        this.produit = produit;
+        myList.add(produit);
+        
+       
+      
     }
     
    
