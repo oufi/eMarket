@@ -20,15 +20,50 @@ import model.Product;
 public class CatalogManager implements Serializable{
     
     private ArrayList<Product> myList = new ArrayList<Product>();
+    private int ident;
+    private String name;
+    private double price;
     private Product produit = new Product();
+    
+    
+    public int getIdent() {
+        return ident;
+    }
 
-    public Product getProduit() {
-        return produit;
+    public void setIdent(int ident) {
+        produit.setId(ident);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public void setProduit(Product produit) {
         this.produit = produit;
     }
+
+   
+
+    public double getPrice() {
+        return price;
+    }
+
+   
+   
+
+    public Product getProduit() {
+        return produit;
+    }
+
+    
     
     
     public CatalogManager(){}
@@ -41,19 +76,24 @@ public class CatalogManager implements Serializable{
     this.myList=l;
     }
     
-    public void addProduct(Product produit){
+    public String createProduct(){
+        produit.setId(this.ident);
+        produit.setNom(this.name);
+        produit.setPrix(this.price);
+        myList.add(produit);
+        return "catalog.xhtml";
+            }
+/**    public void createProduct(Product produit){
         
         this.produit = produit;
         myList.add(produit);
         
-       
-      
-    }
+    }*/
     
    
-    @PostConstruct
-    public void myInitMethode(){
-   /*      Product produit = new Product();
+   /* @PostConstruct
+     public void myInitMethode(){
+        Product produit = new Product();
         produit.setId(1);
         produit.setNom("Chirra");
         produit.setPrix(25);
@@ -62,9 +102,9 @@ public class CatalogManager implements Serializable{
     
         produit2.setId(2);
         produit2.setNom("Kiff");
-        produit2.setPrix(45);*/
+        produit2.setPrix(45);
         myList.add(produit);
-    }
+    }*/
     
     
     

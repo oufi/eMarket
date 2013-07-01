@@ -9,17 +9,23 @@ and open the template in the editor.
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Ajout produits</title>
+        
     </h:head>
     <h:body>
         <f:view>
+            <h:form>
+                <h:commandLink action="PCreateToCatalog">
+                    <h:outputText value="Catalog"/>
+                </h:commandLink>
+            </h:form>
             <h:form id="product-create" >
                 <h:outputLabel for="fieldID" value="identifiant : "/>
-                <h:inputText id="id" value="#{catalogManager.produit.id}"/><br/>
+                <h:inputText id="ident" value="#{catalogManager.ident}"/><br/>
                 <h:outputLabel for="fieldNom" value="Nom : "/>
-                <h:inputText id="fieldNom" value="#{catalogManager.produit.nom}"/><br/>
+                <h:inputText id="name" value="#{catalogManager.name}"/><br/>
                 <h:outputLabel for="fieldPrix" value="Prix : "/>
-                <h:inputText id="fieldPrix" value="#{catalogManager.produit.prix}"/><br/>
-                <h:commandButton value="Ajouter" type="submit" action="#{catalogManager.addProduct}"/>
+                <h:inputText id="price" value="#{catalogManager.price}"/><br/>
+                <h:commandButton value="Ajouter" action="#{catalogManager.createProduct}"/>
             </h:form>
         </f:view>
     </h:body>
