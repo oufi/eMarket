@@ -23,7 +23,7 @@ public class CatalogManager implements Serializable{
     private int ident;
     private String name;
     private double price;
-    private Product produit = new Product();
+    //private Product produit = new Product();
     
     
     public int getIdent() {
@@ -31,7 +31,7 @@ public class CatalogManager implements Serializable{
     }
 
     public void setIdent(int ident) {
-        produit.setId(ident);
+        this.ident=ident;
     }
 
     public String getName() {
@@ -46,9 +46,9 @@ public class CatalogManager implements Serializable{
         this.price = price;
     }
 
-    public void setProduit(Product produit) {
+   /* public void setProduit(Product produit) {
         this.produit = produit;
-    }
+    }*/
 
    
 
@@ -59,9 +59,9 @@ public class CatalogManager implements Serializable{
    
    
 
-    public Product getProduit() {
+ /*   public Product getProduit() {
         return produit;
-    }
+    }*/
 
     
     
@@ -75,13 +75,14 @@ public class CatalogManager implements Serializable{
     public void setMyList(ArrayList<Product> l){
     this.myList=l;
     }
-    
+  //  @PostConstruct
     public String createProduct(){
+        Product produit=new Product();
         produit.setId(this.ident);
         produit.setNom(this.name);
         produit.setPrix(this.price);
         myList.add(produit);
-        return "catalog.xhtml";
+       return "catalog.xhtml";
             }
 /**    public void createProduct(Product produit){
         
