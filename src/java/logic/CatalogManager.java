@@ -6,7 +6,7 @@ package logic;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import javax.annotation.PostConstruct;
+//import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ApplicationScoped;
 import model.Product;
