@@ -6,7 +6,7 @@ package logic;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import javax.faces.bean.ApplicationScoped;
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import model.Product;
@@ -19,28 +19,10 @@ import model.ShoppingCartItem;
 @ManagedBean
 @SessionScoped
 public class ShoppingCartManager implements Serializable{
-private ArrayList<ShoppingCartItem> liste;
-private int ident;
-private int qtt;
-Product produit = new Product();
-
-    public int getIdent() {
-        return ident;
-    }
-
-    public void setIdent(int ident) {
-        this.ident = ident;
-    }
-
-    public int getQtt() {
-        return qtt;
-    }
-
-    public void setQtt(int qtt) {
-        this.qtt = qtt;
-    }
+private ArrayList<ShoppingCartItem> liste =new ArrayList<ShoppingCartItem>();
 
 
+   
     public ShoppingCartManager() {
         liste.clear();
     }
@@ -53,5 +35,13 @@ Product produit = new Product();
         this.liste = liste;
     }
     
-    
+    @PostConstruct
+    public void initCart(){
+    ShoppingCartItem shop = new ShoppingCartItem();
+    Product prod =new Product(1,"Khobz",20.00);
+    shop.setId(1);
+    shop.setQtt(30);
+    shop.setProduit(prod);
+    liste.add(shop);
+    }
 }

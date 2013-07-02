@@ -17,11 +17,11 @@ private int id;
 private int qtt;
 private Product produit;
 
-    public ShoppingCartItem(int id, int qtt, Product produit) {
-        this.id = id;
-        this.qtt = qtt;
-        this.produit = produit;
+    public ShoppingCartItem() {
+        
     }
+
+    
 
 
     public int getId() {

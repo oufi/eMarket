@@ -21,8 +21,16 @@ and open the template in the editor.
                 
             </h:form>
             
-            <h:dataTable class="table" >
-                <f:facet id="ident" name="#{shoppingCartManager.id}"
+            <h:dataTable class="table" value="#{shoppingCartManager.liste}" var="item" >
+                <h:column>
+                    <f:facet name="header"><h:outputText value="Nom"/></f:facet>
+                    <h:outputText value="#{item.produit.nom}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"><h:outputText value="Qtt"/></f:facet>
+                    <h:outputText value="#{item.qtt}"/>
+                </h:column>
+                
                 
             </h:dataTable>  
         </f:view>
