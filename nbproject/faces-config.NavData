@@ -5,7 +5,7 @@
         <Node id="shoppingCarte.xhtml" x="650" y="150" zoom="true"/>
         <Node id="index.xhtml" x="118" y="22" zoom="true"/>
         <Node id="product-create.xhtml" x="42" y="354" zoom="true"/>
-        <Node id="catalog.xhtml" x="257" y="263" zoom="true"/>
+        <Node id="catalog.xhtml" x="415" y="386" zoom="false"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>

@@ -18,7 +18,7 @@ and open the template in the editor.
                 <ul> <h:commandLink action="catalogToIndex">
                         <li> <h:outputText value="Index"/></li>
                     </h:commandLink></ul>
-            </h:form>
+           
             
             <h:dataTable class="table" value="#{catalogManager.myList}" var="item">
                 <h:column>
@@ -37,9 +37,14 @@ and open the template in the editor.
                     </f:facet>
                     <h:outputText value="#{item.prix}"/>
                 </h:column>
-                
+                <h:column>
+                    <h:commandLink value="add" action="#{shoppingCartManager.addToCarte()}">
+                    
+                    </h:commandLink>
+                </h:column>
             
-            </h:dataTable>
+            </h:dataTable> 
+            </h:form>
         </f:view>
     </h:body>
 </html>
