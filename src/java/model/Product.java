@@ -5,20 +5,31 @@
 package model;
 
 import java.io.Serializable;
+import javax.persistence.*;
+
+
 
 /**
  *
  * @author mohammedoufi
  */
+@Entity
+@Table(name="PRODUCT")
 public class Product implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
+    
+    @Column(name = "NAME")
     private String nom;
+    
+    @Column(name = "SELLING_PRICE")
     private double prix;
     
     public Product(){}
 
-    public Product(int id, String nom, double prix) {
-        this.id = id;
+    public Product(String nom, double prix) {
+        
         this.nom = nom;
         this.prix = prix;
     }

@@ -54,11 +54,11 @@ private Product prodToAdd = new Product();
     liste.add(shop);
     }*/
     
-    public String addToCarte(){
+    public String addToCarte(Product item){
     ShoppingCartItem shop =new ShoppingCartItem();
     //setProdToAdd(prodToAdd); 
     //shop.setId(10);
-    this.prodToAdd = prodToAdd;
+    this.prodToAdd = item;
     shop.setProduit(prodToAdd);
     shop.setQtt(2);
     liste.add(shop);

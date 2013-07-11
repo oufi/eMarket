@@ -19,13 +19,12 @@ and open the template in the editor.
                 </h:commandLink>
             </h:form>
             <h:form id="product-create" >
-                <h:outputLabel for="fieldID" value="identifiant : "/>
-                <h:inputText id="ident" value="#{catalogManager.ident}"/><br/>
+                 
                 <h:outputLabel for="fieldNom" value="Nom : "/>
-                <h:inputText id="name" value="#{catalogManager.name}"/><br/>
+                <h:inputText id="name" value="#{catalogManager.produit.nom}"/><br/>
                 <h:outputLabel for="fieldPrix" value="Prix : "/>
-                <h:inputText id="price" value="#{catalogManager.price}"/><br/>
-                <h:commandButton value="Ajouter" action="#{catalogManager.createProduct}"/>
+                <h:inputText id="price" value="#{catalogManager.produit.prix}"/><br/>
+                <h:commandButton value="Ajouter" action="#{catalogManager.createProduct()}"/>
             </h:form>
         </f:view>
     </h:body>

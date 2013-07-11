@@ -38,7 +38,7 @@ and open the template in the editor.
                     <h:outputText value="#{item.prix}"/>
                 </h:column>
                 <h:column>
-                    <h:commandLink value="add" action="#{shoppingCartManager.addToCarte()}">
+                    <h:commandLink value="add" action="#{shoppingCartManager.addToCarte(item)}">
                     
                     </h:commandLink>
                 </h:column>

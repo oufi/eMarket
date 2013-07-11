@@ -36,7 +36,7 @@ ul{
 
 .table{
     border: solid thin #99ccff ;
-    width: 300px;
+    width: auto;
     text-align: center;  
 }
 

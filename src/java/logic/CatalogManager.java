@@ -4,9 +4,12 @@
  */
 package logic;
 
+import facade.ProductFacade;
 import java.io.Serializable;
-import java.util.ArrayList;
-//import javax.annotation.PostConstruct;
+//import java.util.ArrayList;
+import java.util.List;
+import javax.ejb.EJB;
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ApplicationScoped;
 import model.Product;
@@ -19,94 +22,55 @@ import model.Product;
 @ApplicationScoped
 public class CatalogManager implements Serializable{
     
-    private ArrayList<Product> myList = new ArrayList<Product>();
-    private int ident;
-    private String name;
-    private double price;
+    private List<Product> myList = null;
+    @EJB
+    private ProductFacade productfacade;
+  
+    
+    private Product produit = new Product();
+    
     //private Product produit = new Product();
-    
-    
-    public int getIdent() {
-        return ident;
+    public ProductFacade getProductfacade() {
+        return productfacade;
     }
 
-    public void setIdent(int ident) {
-        this.ident=ident;
+    public void setProductfacade(ProductFacade productfacade) {
+        this.productfacade = productfacade;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-   /* public void setProduit(Product produit) {
-        this.produit = produit;
-    }*/
-
-   
-
-    public double getPrice() {
-        return price;
-    }
-
-   
-   
-
- /*   public Product getProduit() {
+  
+    public Product getProduit() {
         return produit;
-    }*/
+    }
+
+    public void setProduit(Product produit) {
+        this.produit = produit;
+    }
 
     
-    
+
+ 
     
     public CatalogManager(){}
  
-    public ArrayList<Product> getMyList(){
-    return this.myList;
+    public List<Product> getMyList(){
+    return productfacade.findAll();
     }
     
-    public void setMyList(ArrayList<Product> l){
+    public void setMyList(List<Product> l){
     this.myList=l;
     }
-  //  @PostConstruct
+    
+    
+  @PostConstruct
+  public void initCat(){
+  myList = productfacade.findAll();
+  }
     public String createProduct(){
-        Product produit=new Product();
-        produit.setId(this.ident);
-        produit.setNom(this.name);
-        produit.setPrix(this.price);
-        myList.add(produit);
+        productfacade.create(produit);
+        
        return "catalog.xhtml";
             }
-/**    public void createProduct(Product produit){
-        
-        this.produit = produit;
-        myList.add(produit);
-        
-    }*/
-    
-   
-   /* @PostConstruct
-     public void myInitMethode(){
-        Product produit = new Product();
-        produit.setId(1);
-        produit.setNom("Chirra");
-        produit.setPrix(25);
-        
-        Product produit2 = new Product();
-    
-        produit2.setId(2);
-        produit2.setNom("Kiff");
-        produit2.setPrix(45);
-        myList.add(produit);
-    }*/
-    
     
     
 }
